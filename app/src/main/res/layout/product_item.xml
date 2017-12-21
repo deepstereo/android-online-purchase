@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_weight=".30"
+        android:contentDescription="@string/blonde" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight=".50"
+        android:text="@string/blonde"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:gravity="bottom"/>
+
+    <EditText
+        android:id="@+id/blondeAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight=".20"
+        android:ems="2"
+        android:inputType="number"
+        android:textColor="@color/colorAccent"
+        android:labelFor="@id/blondeAmount"/>
+
+
+
+</LinearLayout>

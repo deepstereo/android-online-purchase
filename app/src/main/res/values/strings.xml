@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">SKozak_IKaur_MAPD711_OnlinePurchase</string>
+    <string name="loginActivityTitle">Please login!</string>
+    <string name="placeOrderActivityTitle">Place order</string>
+    <string name="customerDetailsTitle">Your details</string>
+    <string name="orderListTitle">A list of orders</string>
+
+    <string name="customer">Customer</string>
+    <string name="clerk">Employee</string>
+
+    <string name="username">Email</string>
+    <string name="password">Password</string>
+    <string name="loginButton">Log in</string>
+
+
+    <string name="orderInstructions1">Plese enter the number or bottles and click "Next"</string>
+    <string name="blonde">Blonde Lager</string>
+    <string name="threeSpeed">3 Speed Lager</string>
+    <string name="boneshaker">Boneshaker IPA</string>
+    <string name="nextStep">Next step</string>
+
+    <string name="confirmButton">Confirm order</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="firstName">First name</string>
+    <string name="lastName">Last name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="postalCode">Postal Code</string>
+
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
+</resources>
