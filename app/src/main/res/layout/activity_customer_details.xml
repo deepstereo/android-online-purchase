@@ -16,6 +16,14 @@
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorPrimaryDark" />
 
+    <TextView
+        android:id="@+id/updateMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/update_details"
+        android:textColor="@color/colorAccent" />
+
     <EditText
         android:id="@+id/customerFirstName"
         android:layout_width="match_parent"
@@ -47,23 +55,13 @@
         android:textColor="@color/colorSecondaryText" />
 
     <EditText
-        android:id="@+id/city"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:ems="10"
         android:hint="@string/city"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/colorSecondaryText" />
-
-    <EditText
-        android:id="@+id/postalCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="@string/postalCode"
-        android:ems="10"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textColor="@color/colorSecondaryText" />
 
     <Button
@@ -71,6 +69,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onConfirmClick"
         android:text="@string/confirmButton" />
 
 </LinearLayout>

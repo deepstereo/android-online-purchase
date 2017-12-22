@@ -19,6 +19,15 @@ public interface OrderDao {
     @Query("SELECT * From OrderSchema")
     List<OrderSchema> findAllOrders();
 
+    @Query("select * from OrderSchema where orderID = :id")
+    List<OrderSchema> loadOrdersWithId(String id);
+
+    @Query("select * from OrderSchema where orderID = :id")
+    OrderSchema loadOrderById(String id);
+
+    @Query("select * from OrderSchema where customer = :id")
+    List<OrderSchema> loadOrderByCustomerId(String id);
+
     @Insert()
     void insertOrder(OrderSchema order);
 

@@ -17,10 +17,10 @@ public interface ProductDao {
     List<ProductSchema> loadAllProducts();
 
     @Query("select * from ProductSchema where productID = :id")
-    ProductSchema loadProductById(int id);
+    ProductSchema loadProductById(String id);
 
     @Query("select * from ProductSchema where productName = :productName")
-    List<ProductSchema> findProductByName(String productName);
+    ProductSchema findProductByName(String productName);
 
     @Insert(onConflict = IGNORE)
     void insertProduct(ProductSchema product);

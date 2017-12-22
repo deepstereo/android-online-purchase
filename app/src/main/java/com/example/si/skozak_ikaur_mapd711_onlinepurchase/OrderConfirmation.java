@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.si.skozak_ikaur_mapd711_onlinepurchase.db.AppDatabase;
 import com.example.si.skozak_ikaur_mapd711_onlinepurchase.db.CustomerSchema;
-import com.example.si.skozak_ikaur_mapd711_onlinepurchase.db.DatabaseInitializer;
 import com.example.si.skozak_ikaur_mapd711_onlinepurchase.db.OrderSchema;
 import com.example.si.skozak_ikaur_mapd711_onlinepurchase.db.ProductSchema;
 
@@ -19,52 +20,56 @@ import java.util.List;
 
 import static com.example.si.skozak_ikaur_mapd711_onlinepurchase.MainActivity.PREFS;
 
-public class OrderList extends AppCompatActivity {
+public class OrderConfirmation extends AppCompatActivity {
 
     private AppDatabase mDb;
-    private List<OrderSchema> orderListDataset;
-    private List<ProductSchema> productListDataset;
+    private List<OrderSchema> orderDataset;
+    private List<ProductSchema> productDataset;
 
-    private RecyclerView orderListRecycler;
-    private RecyclerView.Adapter orderListAdapter;
-    private RecyclerView.LayoutManager orderListLayoutManager;
+    private RecyclerView orderRecycler;
+    private RecyclerView.Adapter orderAdapter;
+    private RecyclerView.LayoutManager orderLayoutManager;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_list);
+        setContentView(R.layout.activity_order_confirmation);
 
         mDb = AppDatabase.getInMemoryDatabase(getApplicationContext());
 
+        SharedPreferences sharedPrefs = getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+        String username = sharedPrefs.getString("username", "username");
+        CustomerSchema customer = mDb.customerModel().loadCustomerByUsername(username);
 
-        orderListDataset = mDb.orderModel().findAllOrders();
-        productListDataset = mDb.productModel().loadAllProducts();
+        orderDataset = mDb.orderModel().loadOrderByCustomerId(customer.customerID);
+        productDataset = mDb.productModel().loadAllProducts();
 
 
-        orderListRecycler = (RecyclerView) findViewById(R.id.orderListRecycler);
+        orderRecycler = (RecyclerView) findViewById(R.id.confirmationRecycler);
 
-        orderListLayoutManager = new LinearLayoutManager(this);
-        orderListRecycler.setLayoutManager(orderListLayoutManager);
+        orderLayoutManager = new LinearLayoutManager(this);
+        orderRecycler.setLayoutManager(orderLayoutManager);
 
-        orderListAdapter = new OrderListAdapter(orderListDataset, productListDataset);
-        orderListRecycler.setAdapter(orderListAdapter);
+        orderAdapter = new OrderAdapter(orderDataset, productDataset);
+        orderRecycler.setAdapter(orderAdapter);
 
     }
 
+    public void onHomeClicked (View view) {
 
-    private void populateDb() {
-        DatabaseInitializer.populateSync(mDb);
-    }
-
-    public void onClickLogout (View view) {
         SharedPreferences sharedPrefs = getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.remove("username");
         editor.apply();
 
-        Intent i = new Intent(OrderList.this, MainActivity.class);
+        Intent i = new Intent(OrderConfirmation.this, MainActivity.class);
         startActivity(i);
     }
+
+
+
+
 
 }

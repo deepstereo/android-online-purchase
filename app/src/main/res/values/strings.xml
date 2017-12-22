@@ -8,16 +8,17 @@
     <string name="customer">Customer</string>
     <string name="clerk">Employee</string>
 
-    <string name="username">Email</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="loginButton">Log in</string>
 
 
-    <string name="orderInstructions1">Plese enter the number or bottles and click "Next"</string>
+    <string name="orderInstructions1">Please enter the amount and tap "Next step"</string>
     <string name="blonde">Blonde Lager</string>
     <string name="threeSpeed">3 Speed Lager</string>
     <string name="boneshaker">Boneshaker IPA</string>
     <string name="nextStep">Next step</string>
+    <string name="amount_hint"> </string>
 
     <string name="confirmButton">Confirm order</string>
     <string name="title_activity_login">Sign in</string>
@@ -27,7 +28,15 @@
     <string name="address">Address</string>
     <string name="city">City</string>
     <string name="postalCode">Postal Code</string>
+    <string name="yourOrder">You ordered:</string>
+    <string name="update_details">Please update your details if necessary and tap "Confirm order"</string>
 
+    <string name="thanks">Thank you!\n Here are your orders:</string>
+    <string name="order_confirmed">Confirmed</string>
+    <string name="go_home">Log out</string>
+    <string name="list_of_orders">List of orders</string>
+    <string name="order_id">Order ID: </string>
+    <string name="order_status">Order status: </string>
 
 
     <!-- Strings related to login -->

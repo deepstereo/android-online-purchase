@@ -4,32 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.si.skozak_ikaur_mapd711_onlinepurchase.OrderList"
+    tools:context="com.example.si.skozak_ikaur_mapd711_onlinepurchase.OrderConfirmation"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/list_of_orders"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/orderListRecycler"
+        android:id="@+id/confirmationRecycler"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        tools:listitem="@layout/order_item"/>
+        android:layout_height="350dp" />
 
     <Button
         android:id="@+id/goHome"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClickLogout"
+        android:onClick="onHomeClicked"
         android:text="@string/go_home" />
 
 

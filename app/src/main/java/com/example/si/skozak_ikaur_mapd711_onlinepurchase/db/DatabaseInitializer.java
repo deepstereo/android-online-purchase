@@ -86,6 +86,7 @@ public class DatabaseInitializer {
 
 
         CustomerSchema customer1 = addCustomer(db, "1", "customer1", "12345", "John", "McClane", "145 Bloor Street, Toronto", "john@test.com");
+        CustomerSchema customer2 = addCustomer(db, "2", "customer2", "67890", "John", "Smith", "145 Bay Street, Toronto", "john@test.com");
         EmployeeSchema employee1 = addEmployee(db, "1", "employee1", "54321", "Hans", "Gruber");
 
         ProductSchema product1 = addProduct(db, "1", "Blonde Lager", "lager", 3, 100, R.drawable.blonde);
@@ -98,9 +99,9 @@ public class DatabaseInitializer {
             Date today = getTodayPlusDays(0);
             Date yesterday = getTodayPlusDays(-1);
 
-            addOrder(db, "1", customer1, product1, employee1, 5, today, "in process");
+            addOrder(db, "1", customer2, product1, employee1, 5, today, "in process");
             Thread.sleep(DELAY_MILLIS);
-            addOrder(db, "2", customer1, product2, employee1, 5, today, "in process");
+            addOrder(db, "2", customer2, product2, employee1, 5, today, "in process");
             Thread.sleep(DELAY_MILLIS);
 
         } catch (InterruptedException e) {
